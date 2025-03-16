@@ -2,6 +2,12 @@ import { transporter, mailOptionsBase } from "../../transporter/transporter.js";
 
 // Función para enviar correo de notificación
 export function forgotPassword(nombre, email) {
+  const notificaciones = [
+    // Registro
+    {
+      subject: "Nuevo registro",
+    },
+  ];
   // Construir el contenido HTML del correo
   const reset_link = process.env.HOST_CLIENT;
   const mensajeHtml = `
@@ -166,7 +172,6 @@ export function forgotPassword(nombre, email) {
     ...mailOptionsBase,
     to: email,
     subject: notificaciones[0].subject,
-    text: notificaciones[0].notificacion,
     html: mensajeHtml,
   };
 
