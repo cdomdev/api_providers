@@ -14,7 +14,7 @@ app.use(cookieParser());
 
 // setting routes for cors
 
-const allowedOrigins = ["http://localhost:4321"];
+const allowedOrigins = ["http://localhost:4321", "https://santas-tortas.vercel.app"];
 
 app.use(
   cors({
