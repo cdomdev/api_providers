@@ -14,7 +14,7 @@ export async function createUserStrapi(username, email, password) {
       };
     }
 
-    const HOST = "http://localhost:1337";
+    const HOST = process.env.HOST_EXTERNEL
     const response = await axios.post(`${HOST}/api/auth/local/register`, {
       username,
       email,
