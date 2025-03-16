@@ -3,6 +3,9 @@ import { transporter, mailOptionsBase } from "../../transporter/transporter.js";
 // Función para enviar correo de notificación
 export function sendMailsRegistro(nombre, email) {
   // Construir el contenido HTML del correo
+
+  const HOST_CLIENT = process.env.HOST_VERCEL_APP
+  
   const mensajeHtml = `
 <!DOCTYPE html>
 <html lang="es">
@@ -135,7 +138,7 @@ export function sendMailsRegistro(nombre, email) {
             <h2>Hola ${nombre},</h2>
             <p>Nos encanta que estés aquí. En <b>Santas Tortas</b>, horneamos con amor y dedicación para endulzar tus momentos especiales.</p>
             <p>¡Descubre nuestras deliciosas tortas y vive una experiencia única!</p>
-            <a href="http://localhost:4321/productos/productos" class="cta-button">Ver nuestras tortas 🍰</a>
+            <a href="${HOST_CLIENT}/productos/productos" class="cta-button">Ver nuestras tortas 🍰</a>
         </div>
 
         <div class="footer">

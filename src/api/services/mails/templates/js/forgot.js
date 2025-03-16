@@ -3,7 +3,7 @@ import { transporter, mailOptionsBase } from "../../transporter/transporter.js";
 // Función para enviar correo de notificación
 export function forgotPassword(nombre, email) {
   // Construir el contenido HTML del correo
-  const reset_link = "htpps://santas-tortas.vercel.app";
+  const reset_link = process.env.HOST_CLIENT;
   const mensajeHtml = `
 <!DOCTYPE html>
 <html lang="es">
