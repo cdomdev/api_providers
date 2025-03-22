@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // setting routes for cors
-
-const allowedOrigins = ["http://localhost:4321", "https://santas-tortas.vercel.app"];
+const {HOST_VERCEL_APP} = process.env
+const allowedOrigins = [HOST_VERCEL_APP];
 
 app.use(
   cors({
